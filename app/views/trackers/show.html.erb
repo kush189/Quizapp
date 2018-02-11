@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tracker.user.email %>
+</p>
+
+<p>
+  <strong>Subgenre:</strong>
+  <%= @tracker.subgenre.title %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @tracker.score %>
+</p>
+<%= link_to 'Back', trackers_path %>

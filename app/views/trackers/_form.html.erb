@@ -1,0 +1,32 @@
+<%= form_with(model: tracker, local: true) do |form| %>
+  <% if tracker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tracker.errors.count, "error") %> prohibited this tracker from being saved:</h2>
+
+      <ul>
+      <% tracker.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :tracker_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subgenre_id %>
+    <%= form.text_field :subgenre_id, id: :tracker_subgenre_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.number_field :score, id: :tracker_score %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

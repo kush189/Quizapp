@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="btn-group" style="color:#0000FF">
+  <button class="btn btn-success btn-block">
+    <h1>Trackers</h1>
+  </button>
+</div>
+<table class = "table table-responsive">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Subgenre</th>
+      <th>Score</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trackers.each do |tracker| %>
+    <tr>
+      <td><%= tracker.user.email %></td>
+
+      <td><%= tracker.subgenre.title %></td>
+      <td><%= tracker.score %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>

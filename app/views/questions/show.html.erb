@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Subgenre:</strong>
+  <%= @question.subgenre.title %>
+</p>
+<%=form_for(@question) do |f|%>
+<p>
+  <strong>Question:</strong>
+  <%= @question.text %>
+</p>
+
+<p>
+  <strong>A:</strong>
+  <%= check_box_tag (:A)%>
+  <%= @question.op1 %>
+</p>
+
+<p>
+  <strong>B:</strong>
+  <%= check_box_tag(:B) %>
+  <%= @question.op2 %>
+</p>
+
+<p>
+  <strong>C:</strong>
+  <%= check_box_tag(:C) %>
+  <%= @question.op3 %>
+</p>
+
+<p>
+  <strong>D:</strong>
+  <%= check_box_tag(:D) %>
+  <%= @question.op4 %>
+</p>
+<%= f.submit 'Submit' %>
+</form>
+<% end %>
+<!-- <p>
+  <strong>Answer:</strong>
+  <%= @question.answer %>
+</p>
+ -->
+<!--<%= link_to 'Edit', edit_question_path(@question) %> -->
+<%= link_to 'Back', '/subgenres/'+(@question.subgenre.id).to_s+'/questions/' %>

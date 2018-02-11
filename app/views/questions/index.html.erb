@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="btn-group" style="color:#0000FF">
+<button class="btn btn-success btn-block">
+<h1>Questions</h1>
+</button>
+</div>
+<br>
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Subgenre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.text %></td>
+
+        <td><%= question.subgenre.title %></td>
+        <td><%= link_to 'Show', question %></td>
+        
+        <!--<td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Back','/genres/'+(@questions.first.subgenre.genre.id).to_s+'/subgenres/' %>
+</div>
+
+<!--<%= link_to 'New Question', new_question_path %>-->
